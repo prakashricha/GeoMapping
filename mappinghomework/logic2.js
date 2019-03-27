@@ -107,15 +107,15 @@ function createMap(earthquakes) {
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: true
   }).addTo(myMap);
-  function getColors(d) {
-    return d > 5 ? '#800026' :
-           d > 4  ? '#BD0026' :
-           d > 3  ? '#E31A1C' :
-           d > 2  ? '#FC4E2A' :
-           d > 1   ? '#FD8D3C' :
-           d >   0 ? '#FEB24C' :
-                     '#FFEDA0';
-}
+//   function getColors(d) {
+//     return d > 5 ? '#800026' :
+//            d > 4  ? '#BD0026' :
+//            d > 3  ? '#E31A1C' :
+//            d > 2  ? '#FC4E2A' :
+//            d > 1   ? '#FD8D3C' :
+//            d >   0 ? '#FEB24C' :
+//                      '#FFEDA0';
+// }
   var grades = [0, 1, 2, 3, 4, 5];
    var colors = [
      "#98ee00",
@@ -125,7 +125,7 @@ function createMap(earthquakes) {
      "#ea822c",
      "#ea2c2c"
    ];
-  // var temp = ["gsajdhgsjk","jsadjhsajhgd","jshdjhsdjshjhgds","jsgdjkhgsajkd","ysdusyudd"];
+  
 var legend = L.control({
    position: "bottomright"
  });
@@ -134,7 +134,7 @@ var legend = L.control({
    var div = L.DomUtil.create("div", "info legend");
 for (var i = 0; i < grades.length; i++) {
      div.innerHTML +=
-     '<i style="background:' + colors[i] + '"></i> '   + 
+     '<i style="background:' + colors[i] + '">&nbsp&nbsp&nbsp&nbsp</i> '   + 
        grades[i] + (grades[i + 1] ? "&ndash;" + grades[i + 1] + "<br>" : "+");
    }
    return div;
